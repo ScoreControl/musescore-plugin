@@ -173,6 +173,25 @@ MuseScore {
             })
     }
 
+    function requestPasswordReset(email) {
+        authError = ""
+        authInfo = ""
+        if (email === "") {
+            authError = "Enter your email address first."
+            return
+        }
+        authBusy = true
+        authRequest("/auth/v1/recover", { email: email }, "",
+            function(status, body) {
+                authBusy = false
+                if (status < 200 || status >= 300) {
+                    authError = errorText(status, body)
+                    return
+                }
+                authInfo = "If an account exists for that email, a password reset link has been sent."
+            })
+    }
+
     function logOut() {
         var token = accessToken
         accessToken = ""
@@ -293,6 +312,15 @@ MuseScore {
                 enabled: !authBusy
 
                 onClicked: logIn(loginEmailField.text.trim(), loginPasswordField.text)
+            }
+
+            Button {
+                text: "Forgot password?"
+                flat: true
+                width: parent.width
+                enabled: !authBusy
+
+                onClicked: requestPasswordReset(loginEmailField.text.trim())
             }
 
             Button {
