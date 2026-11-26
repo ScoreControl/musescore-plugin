@@ -541,10 +541,19 @@ MuseScore {
                 }
 
                 Button {
+                    id: forgotPasswordButton
                     text: "Forgot password?"
                     flat: true
                     width: parent.width
                     enabled: !authBusy
+
+                    contentItem: Text {
+                        text: forgotPasswordButton.text
+                        font: forgotPasswordButton.font
+                        color: forgotPasswordButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: requestPasswordReset(loginEmailField.text.trim())
                 }
@@ -560,10 +569,19 @@ MuseScore {
                 }
 
                 Button {
+                    id: createAccountButton
                     text: "Create an account"
                     flat: true
                     width: parent.width
                     enabled: !authBusy
+
+                    contentItem: Text {
+                        text: createAccountButton.text
+                        font: createAccountButton.font
+                        color: createAccountButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: {
                         authError = ""
