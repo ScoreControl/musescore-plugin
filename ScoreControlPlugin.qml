@@ -684,10 +684,19 @@ MuseScore {
                 }
 
                 Button {
+                    id: backToLoginButton
                     text: "‹  Back to log in"
                     flat: true
                     width: parent.width
                     enabled: !authBusy
+
+                    contentItem: Text {
+                        text: backToLoginButton.text
+                        font: backToLoginButton.font
+                        color: backToLoginButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: {
                         authError = ""
@@ -706,8 +715,17 @@ MuseScore {
                 spacing: 15
 
                 Button {
+                    id: createProjectBackButton
                     text: "‹  Back"
                     flat: true
+
+                    contentItem: Text {
+                        text: createProjectBackButton.text
+                        font: createProjectBackButton.font
+                        color: createProjectBackButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: {
                         currentScreen = "login"
@@ -995,11 +1013,20 @@ MuseScore {
                 }
 
                 Button {
+                    id: logOutButton
                     text: "Log out" + (userEmail !== "" ? " (" + userEmail + ")" : "")
                     flat: true
 
                     width: parent.width
                     height: 40
+
+                    contentItem: Text {
+                        text: logOutButton.text
+                        font: logOutButton.font
+                        color: logOutButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: logOut()
                 }
@@ -1014,8 +1041,17 @@ MuseScore {
                 spacing: 15
 
                 Button {
+                    id: commitBackButton
                     text: "‹  Back"
                     flat: true
+
+                    contentItem: Text {
+                        text: commitBackButton.text
+                        font: commitBackButton.font
+                        color: commitBackButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: {
                         currentScreen = "home"
@@ -1073,8 +1109,17 @@ MuseScore {
                 spacing: 10
 
                 Button {
+                    id: historyBackButton
                     text: "‹  Back"
                     flat: true
+
+                    contentItem: Text {
+                        text: historyBackButton.text
+                        font: historyBackButton.font
+                        color: historyBackButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: {
                         currentScreen = "home"
@@ -1177,8 +1222,17 @@ MuseScore {
                 spacing: 10
 
                 Button {
+                    id: branchesBackButton
                     text: "‹  Back"
                     flat: true
+
+                    contentItem: Text {
+                        text: branchesBackButton.text
+                        font: branchesBackButton.font
+                        color: branchesBackButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: {
                         currentScreen = "home"
@@ -1286,8 +1340,17 @@ MuseScore {
                 spacing: 18
 
                 Button {
+                    id: limitedAccessBackButton
                     text: "‹  Back"
                     flat: true
+
+                    contentItem: Text {
+                        text: limitedAccessBackButton.text
+                        font: limitedAccessBackButton.font
+                        color: limitedAccessBackButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: {
                         currentScreen = "branches"
@@ -1350,8 +1413,17 @@ MuseScore {
                 spacing: 10
 
                 Button {
+                    id: restrictedCommitsBackButton
                     text: "‹  Back"
                     flat: true
+
+                    contentItem: Text {
+                        text: restrictedCommitsBackButton.text
+                        font: restrictedCommitsBackButton.font
+                        color: restrictedCommitsBackButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: {
                         currentScreen = "limitedAccess"
@@ -1424,8 +1496,17 @@ MuseScore {
                 spacing: 12
 
                 Button {
+                    id: metadataBackButton
                     text: "‹  Back"
                     flat: true
+
+                    contentItem: Text {
+                        text: metadataBackButton.text
+                        font: metadataBackButton.font
+                        color: metadataBackButton.hovered ? "#0550ae" : "#0969da"
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                    }
 
                     onClicked: {
                         currentScreen = "home"
