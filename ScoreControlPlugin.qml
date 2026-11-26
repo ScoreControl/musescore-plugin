@@ -531,21 +531,6 @@ MuseScore {
                     wrapMode: Text.WordWrap
                     width: parent.width
                 }
-            Button {
-                text: "Forgot password?"
-                flat: true
-                width: parent.width
-                enabled: !authBusy
-
-                onClicked: requestPasswordReset(loginEmailField.text.trim())
-            }
-
-            Button {
-                text: "Create an account"
-                flat: true
-                width: parent.width
-                enabled: !authBusy
-
                 Text {
                     visible: authInfo !== ""
                     text: authInfo
@@ -553,6 +538,15 @@ MuseScore {
                     font.pixelSize: 12
                     wrapMode: Text.WordWrap
                     width: parent.width
+                }
+
+                Button {
+                    text: "Forgot password?"
+                    flat: true
+                    width: parent.width
+                    enabled: !authBusy
+
+                    onClicked: requestPasswordReset(loginEmailField.text.trim())
                 }
 
                 Button {
